@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/css/todayMeal.css" th:href="@{/css/todayMeal.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="date">
+    <button class="left-arrow"></button>
+    <h2 th:text="${data.getDate()} + '(' + ${data.getDays()} + ')'">2024-08-17</h2>
+    <button class="right-arrow"></button>
+</div>
+
+<div class="nav">
+    <ul>
+        <li><a href="/todayMeal/1">본관</a></li>
+        <li><a href="/todayMeal/2">양성재</a></li>
+        <li><a href="/todayMeal/3">양진재</a></li>
+    </ul>
+</div>
+    <div class="meal">
+        <h4>아침</h4>
+        <ul>
+            <li th:each="menu : ${data.getMorning()}" th:text="${menu}">아침 메뉴</li>
+        </ul>
+    </div>
+
+    <div class="meal">
+        <h4>점심</h4>
+        <ul>
+            <li th:each="menu : ${data.getLunch()}" th:text="${menu}">점심 메뉴</li>
+        </ul>
+    </div>
+    <div class="meal">
+        <h4>저녁</h4>
+        <ul>
+            <li th:each="menu : ${data.getDinner()}" th:text="${menu}">저녁 메뉴</li>
+        </ul>
+    </div>
+</body>
+</html>
