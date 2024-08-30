@@ -1,15 +1,13 @@
-package hello.chunglim;
+package hello.crawling;
 
-import hello.chunglim.domain.Meal;
-import hello.chunglim.service.CrawlingService;
-import hello.chunglim.util.MealParser;
+import hello.crawling.domain.Meal;
+import hello.crawling.service.CrawlingService;
+import hello.crawling.util.MealParser;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 
-class ChunglimApplicationTests {
+class CrawlingApplicationTests {
 
 	CrawlingService crawlingService = new CrawlingService(new MealParser());
 

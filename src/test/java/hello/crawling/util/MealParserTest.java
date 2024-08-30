@@ -1,12 +1,7 @@
-package hello.chunglim.util;
+package hello.crawling.util;
 
-import hello.chunglim.domain.Meal;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MealParserTest {
 

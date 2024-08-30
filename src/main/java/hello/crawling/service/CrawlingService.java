@@ -1,17 +1,15 @@
-package hello.chunglim.service;
+package hello.crawling.service;
 
-import hello.chunglim.domain.Meal;
-import hello.chunglim.util.MealParser;
+import hello.crawling.domain.Meal;
+import hello.crawling.util.MealParser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 

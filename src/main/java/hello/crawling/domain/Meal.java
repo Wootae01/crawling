@@ -1,11 +1,8 @@
-package hello.chunglim.domain;
+package hello.crawling.domain;
 
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Data
 public class Meal {
