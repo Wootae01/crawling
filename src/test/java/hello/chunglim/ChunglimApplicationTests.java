@@ -7,22 +7,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import java.time.LocalDate;
+
 class ChunglimApplicationTests {
 
-	@Autowired
-	CrawlingService crawlingService;
+	CrawlingService crawlingService = new CrawlingService(new MealParser());
 
 	@Test
 	public void getURL() {
 		for (int i = 0; i < 10; i++) {
-			System.out.println("URL = " + crawlingService.getUrl(3));
+			System.out.println("URL = " + crawlingService.getUrl(3, LocalDate.now().minusDays(15)));
 		}
 	}
 
 	@Test
 	public void getMenuData() {
-		Meal todayMenu = crawlingService.getTodayMeal(crawlingService.getUrl(3));
+		String url = crawlingService.getUrl(3, LocalDate.now().minusDays(15));
+		Meal todayMenu = crawlingService.getMeal(url, LocalDate.now().minusDays(15), 3);
 		System.out.println(todayMenu);
 
 	}

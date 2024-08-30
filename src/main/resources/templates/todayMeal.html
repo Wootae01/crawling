@@ -9,16 +9,20 @@
 </head>
 <body>
 <div class="date">
-    <button class="left-arrow"></button>
-    <h2 th:text="${data.getDate()} + '(' + ${data.getDays()} + ')'">2024-08-17</h2>
-    <button class="right-arrow"></button>
+    <a href="todayMeal/3/2024-08-16"
+       th:href="@{/todayMeal/{type}/{date}(type=${data.type}, date=${data.getDate().minusDays(1)})}"
+       class="leftTriangle"></a>
+    <h2 th:text="|${data.getDate()}(${data.getDayOfWeek()})|">2024-08-17</h2>
+    <a href="todayMeal/3/2024-08-16"
+       th:href="@{/todayMeal/{type}/{date}(type=${data.type}, date=${data.getDate().plusDays(1)})}"
+       class="rightTriangle"></a>
 </div>
 
 <div class="nav">
     <ul>
-        <li><a href="/todayMeal/1">본관</a></li>
-        <li><a href="/todayMeal/2">양성재</a></li>
-        <li><a href="/todayMeal/3">양진재</a></li>
+        <li><a href="/todayMeal/1" th:href="@{/todayMeal/1/{date}(date=${data.getDate()})}">본관</a></li>
+        <li><a href="/todayMeal/2" th:href="@{/todayMeal/2/{date}(date=${data.getDate()})}">양성재</a></li>
+        <li><a href="/todayMeal/3" th:href="@{/todayMeal/3/{date}(date=${data.getDate()})}">양진재</a></li>
     </ul>
 </div>
     <div class="meal">

@@ -27,7 +27,7 @@ class MealParserTest {
                 "맛김치",
                 "우유or두유"
         };
-        System.out.println(Arrays.toString(parse));
+
 
         //then
         Assertions.assertThat(parse).isEqualTo(expectedMenu);
