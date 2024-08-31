@@ -36,3 +36,4 @@ public class MealParser {
         return menuItems.toArray(new String[0]);
     }
 }
+

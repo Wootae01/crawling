@@ -19,7 +19,7 @@ public class MealController {
 
     @RequestMapping("/")
     public String home() {
-        return "forward:/todayMeal";
+        return "redirect:/todayMeal";
     }
     @GetMapping("/todayMeal/{type}")
     public String todayMeal(Model model, @PathVariable("type") int type) {
